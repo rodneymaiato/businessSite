@@ -1,0 +1,15 @@
+baseURL: 'https://example.org/'
+languageCode: 'en-us'
+title: 'RM Bookkeeping Services'
+
+menu:
+  main:
+  - name: Home
+    pageRef: /
+    weight: 10
+  - name: About
+    pageRef: /about
+    weight: 20
+  - name: Services
+    pageRef: /services
+    weight: 30
