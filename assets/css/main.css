@@ -224,19 +224,29 @@ h3 {
   margin: 3rem auto;
 }
 
-/* Page Content */
+/* FAQs Section */
+.faqs-h2 {
+  text-align: center;
+  margin: 3rem auto;
+}
+/* Call To Action Section */
+.call-to-action-h2 {
+  text-align: center;
+  margin: 3rem auto;
+}
 
-
+/* Footer Section */
 .footer {
   background: var(--color-primary);
   color: #fff;
-  text-align: center;
+  text-align: left;
   padding: 20px;
   margin-top: 60px;
 }
 
 .footer .container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -251,11 +261,39 @@ h3 {
 
 .footer h3 {
   margin-bottom: 10px;
-}
-
-.footer div:nth-child(1) {
   text-align: left;
 }
+.footer p {
+  text-align: left;
+}
+
+footer .copyright {
+  text-align: center;
+}
+details {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+}
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+}
+
+details[open] {
+  padding: 0.5em;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 0.5em;
+}
+
+/* .footer div:nth-child(1) {
+  text-align: left;
+} */
 
 @media (max-width: 1100px) {
   .hero {
@@ -266,6 +304,12 @@ h3 {
     margin: 1rem 0;
     max-width: fit-content;
   }
+  .footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
 }
 
 @media (max-width: 768px) {
@@ -295,10 +339,14 @@ h3 {
   h2 {
     text-align: center;
   }
-
-  .footer div:nth-child(2) {
-    display: none;
-  }
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  gap: 3rem;
+}
 }
 
 @media (max-width: 330px) {
