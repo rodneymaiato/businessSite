@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 
+/* ++++++++++++ Variables +++++++++++++++++ */
 :root {
   --color-primary: #0f172a;
   --color-secondary: #4b1a73;
@@ -9,9 +10,11 @@
     rgb(15 23 42 / 0)
   );
   --color-background-hero: var(--color-secondary);
-  --section-width: 900px;
+  --section-width: 1100px;
   --section-gap: 5rem;
 }
+
+/* ++++++++++++++ CSS Reset +++++++++++++++ */
 
 *,
 *::before,
@@ -52,11 +55,10 @@ h3 {
   line-height: 1.2;
 }
 
-.container {
-  /* max-width: var(--section-width); */
+/* .container {
   margin: 0 auto;
   padding: 0 30px;
-}
+} */
 
 .btn {
   display: inline-block;
@@ -70,13 +72,12 @@ h3 {
   transition: all 0.3s ease;
 }
 
-.logos-small {
-  display: none;
-}
-
-/* Header */
+/* +++++++++++++ Header ++++++++++++++++ */
 .header-background {
   background: var(--color-secondary);
+}
+.header-background.active {
+  background: var(--color-primary);
 }
 .header {
   height: 70px;
@@ -107,28 +108,32 @@ h3 {
   align-items: center;
   gap: 60px;
 }
+.nav-branding {
+  font-size: 2rem;
+}
+
 .hamburger {
   display: none;
   cursor: pointer;
 }
 
-.hamburger .bar {
+.bar {
   display: block;
   background-color: #fff;
   height: 3px;
   width: 25px;
-  margin: 3px auto;
+  margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-nav-link {
-  transition: 0.7s ease;
-}
-.header nav ul li a {
+.nav-link {
   color: #fff;
+  font-weight: 700;
+  /* transition: 0.7s ease; */
 }
+
 .nav-link:hover {
-  color: dodgerblue;
+  text-decoration: underline;
 }
 
 /* +++++++++ Cards in Benefits Section ++++++++++++++++ */
@@ -206,6 +211,7 @@ nav-link {
   align-items: center;
 }
 .hero-image {
+  display: block;
   max-width: 100%;
 }
 
@@ -246,6 +252,31 @@ p {
   margin: 3rem auto;
 }
 
+/*  ++++++++++ FAQs Section +++++++++++ */
+.faqs-h2 {
+  text-align: center;
+  margin: 3rem auto;
+}
+details {
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 2rem;
+  border: none;
+  padding: 0.5em 0.5em 0;
+}
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+}
+details[open] {
+  padding: 0.5em;
+}
+
+details[open] summary {
+  margin-bottom: 0.5em;
+}
 /* +++++++++++++++ Call To Action Section ++++++++++++++++ */
 .call-to-action-h2 {
   text-align: center;
@@ -287,26 +318,9 @@ footer .copyright {
   text-align: center;
   margin: 2rem auto;
 }
-details {
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  padding: 0.5em 0.5em 0;
-}
 
-summary {
-  font-weight: bold;
-  margin: -0.5em -0.5em 0;
-  padding: 0.5em;
-}
 
-details[open] {
-  padding: 0.5em;
-}
 
-details[open] summary {
-  border-bottom: 1px solid #aaa;
-  margin-bottom: 0.5em;
-}
 
 /* Add these styles for the menu-toggle and hamburger icon */
 
@@ -321,6 +335,14 @@ details[open] summary {
     margin: 1rem 0;
     max-width: fit-content;
   }
+  .hero-image {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+  }
+  .hero-image-container {
+    margin: 2rem;
+  }
   .footer .container {
     display: flex;
     flex-wrap: wrap;
@@ -333,16 +355,19 @@ details[open] summary {
   .features .container {
     grid-template-columns: auto;
   }
-
   .navbar {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-
   .hero-image {
-    margin: 2rem 0;
+    display: block;
+    max-width: 80%;
+    margin: auto;
+  }
+  .hero-image-container {
+    margin: 1rem;
   }
   .showcase {
     padding-top: 0;
@@ -362,14 +387,6 @@ details[open] summary {
   .hamburger {
     display: block;
   }
-
-  .hamburger .bar {
-    background-color: #fff;
-    height: 3px;
-    width: 25px;
-    margin: 3px 0;
-  }
-
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
@@ -385,17 +402,15 @@ details[open] summary {
     top: 70px;
     gap: 0;
     flex-direction: column;
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary);
     width: 100%;
     text-align: center;
-    transition: 0.3s;
+    /* transition: 0.3s; */
   }
-
   .nav-item {
     max-width: 1rem 0;
   }
-
-  .menu.active {
-    display: flex;
+  .nav-menu.active {
+    left: 0;
   }
 }

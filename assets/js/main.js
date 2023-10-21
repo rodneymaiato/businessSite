@@ -1,19 +1,26 @@
-const menuToggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('menu');
+window.onload = function () {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+  const headerBackground = document.querySelector(".header-background");
 
-menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    headerBackground.classList.toggle("active");
+  });
+
+  
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuLinks = document.querySelectorAll(".nav-menu a");
+
+    menuLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            // Close the menu (you can replace this with your specific code to close the menu)
+            document.querySelector(".nav-menu").classList.remove("active");
+            document.querySelector(".hamburger").classList.remove("active");
+            document.querySelector(".header-background").classList.remove("active");
+        });
+    });
 });
-
-// Close the menu when clicking anywhere else on the document
-document.addEventListener('click', (event) => {
-    if (menu.classList.contains('active') && event.target !== menu && event.target !== menuToggle) {
-        menu.classList.remove('active');
-    }
-});
-
-// Prevent clicks inside the menu from closing it
-menu.addEventListener('click', (event) => {
-    event.stopPropagation();
-});
-
