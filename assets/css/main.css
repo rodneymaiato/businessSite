@@ -4,6 +4,9 @@
 :root {
   --color-primary: #0f172a;
   --color-secondary: #4b1a73;
+  --font-light: #fff;
+  --font-dark: #333;
+  --background-body: #f8fafc;
   --color-background-image: linear-gradient(
     to bottom,
     var(--color-primary),
@@ -23,18 +26,21 @@
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background: #f8fafc;
-  color: #333;
+  background: var(--background-body);
+  color: var(--font-dark);
 }
 
 a {
   text-decoration: none;
-  color: #333;
+  color: var(--font-dark);
 }
 
 p {
@@ -72,7 +78,7 @@ h3 {
   transition: all 0.3s ease;
 }
 
-/* +++++++++++++ Header ++++++++++++++++ */
+/* +++++++++++++ Header Section ++++++++++++++++ */
 .header-background {
   background: var(--color-secondary);
 }
@@ -136,7 +142,7 @@ h3 {
   text-decoration: underline;
 }
 
-/* +++++++++ Cards in Benefits Section ++++++++++++++++ */
+/* +++++++++ Benefits Section ++++++++++++++++ */
 .card img {
   display: block;
   margin: auto;
@@ -247,22 +253,59 @@ p {
 
 /* ++++++++ Social Proof Section ++++++++++++ */
 
-.social-proof-h2 {
-  text-align: center;
-  margin: 3rem auto;
+.social-proof-background {
+  background-color: var(--color-secondary);
+}
+.social-proof {
+ margin: 2rem 0; 
+}
+
+.social-proof-container {
+  max-width: var(--section-width);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.social-proof-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quote {
+  font-size: 18px;
+  color: #333;
+}
+
+.customer-name {
+  font-size: 16px;
+  color: #777;
+  margin-top: 10px;
 }
 
 /*  ++++++++++ FAQs Section +++++++++++ */
+.faqs-container {
+  max-width: var(--section-width);
+  margin: auto;
+}
 .faqs-h2 {
-  text-align: center;
-  margin: 3rem auto;
+  margin: 3rem 0;
+}
+.faqs {
+  margin: 40px 20px;
 }
 details {
-  max-width: 600px;
   margin: auto;
   margin-bottom: 2rem;
   border: none;
   padding: 0.5em 0.5em 0;
+}
+details p {
+  text-align: left;
 }
 
 summary {
@@ -319,9 +362,6 @@ footer .copyright {
   margin: 2rem auto;
 }
 
-
-
-
 /* Add these styles for the menu-toggle and hamburger icon */
 
 /* Media Queries */
@@ -353,6 +393,9 @@ footer .copyright {
 
 @media (max-width: 768px) {
   .features .container {
+    grid-template-columns: auto;
+  }
+  .social-proof-container {
     grid-template-columns: auto;
   }
   .navbar {
