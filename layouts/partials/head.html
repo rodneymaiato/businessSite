@@ -2,4 +2,8 @@
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 {{ partialCached "head/css.html" . }}
-{{ partialCached "head/js.html" . }}
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/features.css" rel="stylesheet">
+<link href="css/jumbotrons.css" rel="stylesheet">
+<link href="css/pricing.css" rel="stylesheet">

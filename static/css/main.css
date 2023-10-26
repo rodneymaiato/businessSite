@@ -456,4 +456,8 @@ footer .copyright {
   .nav-menu.active {
     left: 0;
   }
+  .header {
+   display: grid; 
+  }
+
 }

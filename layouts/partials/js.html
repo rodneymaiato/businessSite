@@ -1,4 +1,4 @@
-{{- with resources.Get "js/main.js" }}
+<!-- {{- with resources.Get "js/bootsrap.bundle.js" }}
   {{- if eq hugo.Environment "development" }}
     {{- with . | js.Build }}
       <script src="{{ .RelPermalink }}"></script>
@@ -9,4 +9,5 @@
       <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
     {{- end }}
   {{- end }}
-{{- end }}
+{{- end }} -->
+<script src="js/bootstrap.bundle.js"></script>

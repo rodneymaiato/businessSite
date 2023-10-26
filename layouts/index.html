@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  {{ partial "head.html" . }}
+  <head>
+    {{ partial "head.html" . }}
+  </head>
   <body>
     <!-- Header section -->
     {{ partial "header.html" . }}
     <!-- Hero Section -->
-  {{ partial "hero-section.html" . }} 
+    {{ partial "hero-section.html" . }}
 
     <!-- Benefits Section with 3 cards -->
     {{ partial "benefits.html" . }}
 
     <!-- More Social Proof  -->
-    {{ partial "social-proof.html" . }}
-
+    {{ partial "social-proof.html" . }} {{ partial "pricing.html" . }} {{
+    partial "script.html" . }}
     <!-- FAQs (That also bust through objections) -->
-    {{ partial "faqs.html" . }}
-    
+
     <!-- Super Direct Call-To-Action -->
     {{ partial "call-to-action.html" . }}
-    
+
+    <!-- Pricing Section -->
+
+    {{ partial "faqs.html" . }}
     <!-- Footer section  -->
     {{ partial "footer.html" . }}
   </body>
